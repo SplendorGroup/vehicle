@@ -1,0 +1,51 @@
+export const color_errors = [
+  {
+    identity: 'COLOR_NOT_FOUND',
+    code: 1500,
+    status: 404,
+    name: 'Color Not Found',
+    message: 'The specified color could not be found.',
+  },
+  {
+    identity: 'COLOR_ALREADY_EXISTS',
+    code: 1501,
+    status: 409,
+    name: 'Color Already Exists',
+    message: 'The color already exists.',
+  },
+  {
+    identity: 'COLOR_CREATION_FAILED',
+    code: 1502,
+    status: 500,
+    name: 'Color Creation Failed',
+    message: 'Failed to create color.',
+  },
+  {
+    identity: 'COLOR_UPDATE_FAILED',
+    code: 1503,
+    status: 500,
+    name: 'Color Update Failed',
+    message: 'Failed to update color.',
+  },
+  {
+    identity: 'COLOR_DELETION_FAILED',
+    code: 1504,
+    status: 500,
+    name: 'Color Deletion Failed',
+    message: 'Failed to delete color.',
+  },
+  {
+    identity: 'COLOR_UNPROCESSABLE_CONTENT',
+    code: 1505,
+    status: 422,
+    name: 'Unprocessable Content',
+    message: '{message}',
+  },
+  {
+    identity: 'COLOR_ALREADY_DEFINED_DEFAULT',
+    code: 1506,
+    status: 409,
+    name: 'Colour Already Defined as Default',
+    message: 'There colour already set as a default.',
+  },
+];

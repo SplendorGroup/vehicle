@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package brand;
+
+// Definição de mensagens
+
+message Brand {
+  string name = 1;
+  optional bool active = 2;
+}
+
+message ResponseBrand {
+  string id = 1;
+  string name = 2;
+  bool active = 3;
+  string created_at = 4;
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  bool email_verify = 4;
+  repeated string roles = 5;
+  repeated string permissions = 6;
+}
+
+message Record {
+  map<string, string> data = 1;
+}
+
+message Filter {
+  optional string id = 1;
+  optional string name = 2;
+  optional string active = 3;
+  optional string page = 4;
+  optional string start_date = 5;
+  optional string end_date = 6;
+}
+
+message BrandId {
+  string id = 1;
+}
+
+message Void {}
+
+message RequestCreateBrand {
+  Void params = 1;
+  Void query = 2;
+  Brand body = 3;
+  User user = 4;
+}
+
+message RequestUpdateBrand {
+  BrandId params = 1;
+  Void query = 2;
+  Brand body = 3;
+  User user = 4;
+}
+
+message RequestFindOneBrand {
+  BrandId params = 1;
+}
+
+message RequestDeleteBrand {
+  BrandId params = 1;
+  User user = 2;
+}
+
+message FindAllResponse {
+  int32 total = 1;
+  int32 page = 2;
+  int32 pages = 3;
+  int32 per_page = 4;
+  int32 in_page = 5;
+  repeated ResponseBrand data = 6;
+}
+
+message RequestFindAll {
+  optional Void params = 1;
+  optional Filter query = 2;
+  optional Void body = 3;
+  optional User user = 4;
+}
+
+service BrandService {
+  rpc FindAll (RequestFindAll) returns (FindAllResponse);
+  rpc FindOne (RequestFindOneBrand) returns (ResponseBrand);
+  rpc Create (RequestCreateBrand) returns (ResponseBrand);
+  rpc Update (RequestUpdateBrand) returns (ResponseBrand);
+  rpc Delete (RequestDeleteBrand) returns (Void);
+}

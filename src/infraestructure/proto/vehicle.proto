@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+package vehicle;
+
+message Vehicle {
+  string brand_id = 1;
+  string model = 2;
+  int32 year = 3;
+  repeated VehicleColors colors = 4;
+  float price = 5;
+  optional bool available = 6;
+  optional bool active = 7;
+}
+
+message VehicleColors {
+  string color_id = 1;
+  optional string image = 2;
+  optional bool default = 3;
+  optional bool active = 4;
+}
+
+message CreateVehicle {
+  string brand_id = 1;
+  string model = 2;
+  int32 year = 3;
+  float price = 4;
+  optional bool available = 5;
+  optional bool active = 6;
+  CreateVehicleColors colors = 7;
+}
+
+message CreateVehicleColors {
+  string color_id = 1;
+  optional string image = 2;
+  optional bool default = 3;
+  optional bool active = 4;
+}
+
+
+message ResponseVehicleColors {
+  string color_id = 1;
+  string color = 2;
+  optional string image = 3;
+  optional bool default = 4;
+}
+
+message ResponseVehicle {
+  string id = 1;
+  string brand_id = 2;
+  string brand = 3;
+  string model = 4;
+  int32 year = 5;
+  int32 price = 6;
+  bool active = 7;
+  bool available = 8;
+  string created_at = 9;
+  repeated ResponseVehicleColors colors = 10;
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  bool email_verify = 4;
+  repeated string roles = 5;
+  repeated string permissions = 6;
+}
+
+message Filter {
+  optional string id = 1;
+  optional string brand_id = 2;
+  optional string model = 3;
+  optional string color = 4;
+  optional bool available = 5;
+  optional string page = 6;
+  optional string start_date = 7;
+  optional string end_date = 8;
+  optional string order = 9;
+}
+
+message VehicleId {
+  string id = 1;
+}
+
+message Void {}
+
+message RequestFindAll {
+  optional Void params = 1;
+  optional Filter query = 2;
+  optional Void body = 3;
+  optional User user = 4;
+}
+
+message RequestCreateVehicle {
+  optional Void params = 1;
+  optional Void query = 2;
+  Vehicle body = 3;
+  User user = 4;
+}
+
+message RequestUpdateVehicle {
+  VehicleId params = 1;
+  Void query = 2;
+  Vehicle body = 3;
+  User user = 4;
+}
+
+message RequestFindOneVehicle {
+  VehicleId params = 1;
+}
+
+message RequestDeleteVehicle {
+  VehicleId params = 1;
+  User user = 2;
+}
+
+message FindAllResponse {
+  int32 total = 1;
+  int32 page = 2;
+  int32 pages = 3;
+  int32 per_page = 4;
+  int32 in_page = 5;
+  repeated ResponseVehicle data = 6;
+}
+
+service VehicleService {
+  rpc FindAll (RequestFindAll) returns (FindAllResponse);
+  rpc FindOne (RequestFindOneVehicle) returns (ResponseVehicle);
+  rpc Create (RequestCreateVehicle) returns (ResponseVehicle);
+  rpc Update (RequestUpdateVehicle) returns (ResponseVehicle);
+  rpc Delete (RequestDeleteVehicle) returns (Void);
+}

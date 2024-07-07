@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model vehicle {
+  id             String   @id @default(uuid()) @map("_id")
+  brand_id       String
+  model          String
+  year           Int 
+  price          Float @default(0)
+  available      Boolean  @default(true)
+  active         Boolean  @default(true)
+  deleted        Boolean  @default(false)
+  created_at     DateTime @default(now()) @map("created_at")
+  updated_at     DateTime @updatedAt @map("updated_at")
+  deleted_at     DateTime? @map("deleted_at")
+  created_by     String?   @map("created_by")
+  updated_by     String?   @map("updated_by")
+  deleted_by     String?   @map("deleted_by")
+  brand     brand    @relation(fields: [brand_id], references: [id])
+  colors vehicle_color[]
+}
+
+model vehicle_color {
+  id             String   @id @default(uuid()) @map("_id")
+  vehicle_id String 
+  color_id String 
+  image String
+  default Boolean @default(false)
+  deleted        Boolean  @default(false)
+  created_at     DateTime @default(now()) @map("created_at")
+  updated_at     DateTime @updatedAt @map("updated_at")
+  deleted_at     DateTime? @map("deleted_at")
+  created_by     String   @map("created_by")
+  updated_by     String?   @map("updated_by")
+  deleted_by     String?   @map("deleted_by")
+  vehicle vehicle @relation(fields: [vehicle_id], references: [id])
+  color color @relation(fields: [color_id], references: [id])
+}
+
+model color {
+  id             String   @id @default(uuid()) @map("_id")
+  name String @unique
+  active         Boolean  @default(true)
+  deleted        Boolean  @default(false)
+  created_at     DateTime @default(now()) @map("created_at")
+  updated_at     DateTime @updatedAt @map("updated_at")
+  deleted_at     DateTime? @map("deleted_at")
+  created_by     String   @map("created_by")
+  updated_by     String?   @map("updated_by")
+  deleted_by     String?   @map("deleted_by")
+  vehicles vehicle_color[]
+}
+
+model brand {
+  id             String   @id @default(uuid()) @map("_id")
+  name           String   @unique
+  active         Boolean  @default(true)
+  deleted        Boolean  @default(false)
+  created_at     DateTime @default(now()) @map("created_at")
+  updated_at     DateTime @updatedAt @map("updated_at")
+  deleted_at     DateTime @updatedAt @map("deleted_at")
+  created_by     String   @map("created_by")
+  updated_by     String?   @map("updated_by")
+  deleted_by     String?   @map("deleted_by")
+  vehicle     vehicle[]
+}
