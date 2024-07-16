@@ -9,7 +9,7 @@ import {
 class IsUniqueColorIdArrayConstraint implements ValidatorConstraintInterface {
   validate(colors: any[]) {
     if (!Array.isArray(colors)) {
-      return false; 
+      return false;
     }
 
     const colorIds = colors.map((color) => color.color_id);

@@ -40,4 +40,3 @@ export class FindAllVehicleDTO {
   @IsOptional()
   end_date: string;
 }
-

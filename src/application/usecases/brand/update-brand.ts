@@ -1,28 +1,32 @@
+import { BrandService } from '@/application/services/brand';
+import { BrandFactory } from '@/domain/factories/brand';
+import { BrandMapper } from '@/domain/mappers/brand';
+import { DataChange } from '@/domain/types/data';
 import { Injectable } from '@nestjs/common';
-import { Brand } from '@/domain/entities/brand';
-import { BrandService } from '@/infraestructure/services/brand';
-import { DataChange } from '@/infraestructure/types/data';
 import { RpcException } from '@nestjs/microservices';
 
 @Injectable()
 export class UpdateBrandUseCase {
-  constructor(private readonly brandService: BrandService) {}
+  constructor(
+    private readonly brandService: BrandService,
+    private readonly brandFactory: BrandFactory,
+  ) {}
 
-  async execute({ id, body: data }: DataChange<Partial<Brand>>) {
+  async execute({ id, body: data }: DataChange<Partial<BrandMapper>>) {
     const brand = await this.getBrand(id);
     this.checkIfTheBrandIsFound(brand);
     const data_response = await this.updateBrand(id, data);
-    return this.transformResponse(data_response)
+    return this.transformResponse(data_response);
   }
 
   async getBrand(id: string) {
     return await this.brandService.findById(id);
   }
 
-  checkIfTheBrandIsFound(brand: Brand) {
+  checkIfTheBrandIsFound(brand: any) {
     if (!brand) {
       throw new RpcException({
-        code: 1400,
+        code: 1600,
         details: JSON.stringify({
           name: 'Brand Not Found',
           identify: 'BRAND_NOT_FOUND',
@@ -33,13 +37,14 @@ export class UpdateBrandUseCase {
     }
   }
 
-  async updateBrand(id: string, data: Partial<Brand>) {
+  async updateBrand(id: string, data: Partial<BrandMapper>) {
     try {
-      const brand = new Brand(data, { update: true });
-      return await this.brandService.update(id, brand);
+      const brandDomain = this.brandFactory.create({ ...data, id });
+      const updatedBrand = await this.brandService.update(id, brandDomain);
+      return updatedBrand;
     } catch {
       throw new RpcException({
-        code: 1403,
+        code: 1603,
         details: JSON.stringify({
           name: 'Brand Update Failed',
           identify: 'BRAND_UPDATE_FAILED',
@@ -50,10 +55,7 @@ export class UpdateBrandUseCase {
     }
   }
 
-  transformResponse(brand: Partial<Brand>) {
-    return {
-      ...brand,
-      created_at: new Date(brand.created_at).toISOString(),
-    };
+  transformResponse(brand: any) {
+    return BrandMapper.toResponse(brand);
   }
 }

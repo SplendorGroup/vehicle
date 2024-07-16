@@ -1,5 +1,5 @@
 import { NestFactory, PartialGraphHost } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { App } from './app';
 import { resolve } from 'path';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { ConfigService } from '@nestjs/config';
@@ -11,7 +11,7 @@ const logger = new Logger(bootstrap.name);
 
 async function bootstrap() {
   process.env.TZ = 'UTC';
-  const app = await NestFactory.create(AppModule, {
+  const app = await NestFactory.create(App, {
     snapshot: true,
     forceCloseConnections: true,
     abortOnError: false,
@@ -25,11 +25,14 @@ async function bootstrap() {
   );
   const BRAND_SERVICE_PORT = Number(config_service.get('BRAND_SERVICE_PORT'));
   const COLOR_SERVICE_PORT = Number(config_service.get('COLOR_SERVICE_PORT'));
-
+  const RESERVATION_SERVICE_PORT = Number(
+    config_service.get('RESERVATION_SERVICE_PORT'),
+  );
   console.log({
     VEHICLE_SERVICE_PORT,
     BRAND_SERVICE_PORT,
     COLOR_SERVICE_PORT,
+    RESERVATION_SERVICE_PORT,
   });
 
   const credentials = grpc.ServerCredentials.createSsl(
@@ -96,6 +99,23 @@ async function bootstrap() {
     },
   });
 
+  app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.GRPC,
+    options: {
+      package: 'reservation',
+      protoPath: resolve('src/infraestructure/proto/reservation.proto'),
+      url: `0.0.0.0:${RESERVATION_SERVICE_PORT}`,
+      gracefulShutdown: true,
+      credentials,
+      loader: {
+        keepCase: true,
+        defaults: true,
+        json: true,
+        arrays: true,
+      },
+    },
+  });
+
   await app.startAllMicroservices();
   await app.init();
 
@@ -111,6 +131,7 @@ async function bootstrap() {
     VEHICLE_SERVICE_PORT,
     BRAND_SERVICE_PORT,
     COLOR_SERVICE_PORT,
+    RESERVATION_SERVICE_PORT,
     TLS_ENABLE,
   };
 }
@@ -120,6 +141,7 @@ bootstrap()
       VEHICLE_SERVICE_PORT,
       BRAND_SERVICE_PORT,
       COLOR_SERVICE_PORT,
+      RESERVATION_SERVICE_PORT,
       TLS_ENABLE,
     }) => {
       logger.log(
@@ -127,6 +149,7 @@ bootstrap()
 [VEHICLE] ${VEHICLE_SERVICE_PORT}
 [BRAND] ${BRAND_SERVICE_PORT}
 [COLOR] ${COLOR_SERVICE_PORT}
+[RESERVATION] ${RESERVATION_SERVICE_PORT}
 [TLS] ${TLS_ENABLE ? 'TRUE' : 'FALSE'}
        `,
       );

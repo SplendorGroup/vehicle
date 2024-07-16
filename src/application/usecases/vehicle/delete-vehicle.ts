@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { VehicleService } from '@/infraestructure/services/vehicle';
+import { VehicleService } from '@/application/services/vehicle';
 import { Vehicle } from '@/domain/entities/vehicle';
-import { DataChangeById } from '@/infraestructure/types/data';
-import { RequestUser } from '@/infraestructure/types/user';
+import { DataChangeById } from '@/domain/types/data';
+import { RequestUser } from '@/domain/types/user';
 import { RpcException } from '@nestjs/microservices';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class DeleteVehicleUseCase {
   checkIfTheVehicleIsFound(vehicle: Vehicle) {
     if (!vehicle) {
       throw new RpcException({
-        code: 1300,
+        code: 1500,
         details: JSON.stringify({
           name: 'Vehicle Not Found',
           identify: 'VEHICLE_NOT_FOUND',
@@ -39,11 +39,10 @@ export class DeleteVehicleUseCase {
         deleted: true,
         active: false,
         deleted_at: new Date(),
-        deleted_by: user?.id ?? "admin",
       });
     } catch {
       throw new RpcException({
-        code: 1304,
+        code: 1504,
         details: JSON.stringify({
           name: 'Vehicle Deletion Failed',
           identify: 'VEHICLE_DELETION_FAILED',

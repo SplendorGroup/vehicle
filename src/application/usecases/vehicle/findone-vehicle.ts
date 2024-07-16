@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { VehicleService } from '@/infraestructure/services/vehicle';
+import { VehicleService } from '@/application/services/vehicle';
 import { RpcException } from '@nestjs/microservices';
 import { Vehicle } from '@/domain/entities/vehicle';
 import { Brand } from '@/domain/entities/brand';
@@ -32,7 +32,7 @@ export class FindOneVehicleUseCase {
   checkIfTheVehicleIsFound(vehicle: Partial<Vehicle>) {
     if (!vehicle) {
       throw new RpcException({
-        code: 1300,
+        code: 1500,
         details: JSON.stringify({
           name: 'Vehicle Not Found',
           identify: 'VEHICLE_NOT_FOUND',

@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Color } from '@/domain/entities/color';
-import { ColorService } from '@/infraestructure/services/color';
-import { DataChangeById } from '@/infraestructure/types/data';
-import { RequestUser } from '@/infraestructure/types/user';
+import { ColorService } from '@/application/services/color';
+import { DataChangeById } from '@/domain/types/data';
+import { RequestUser } from '@/domain/types/user';
 import { RpcException } from '@nestjs/microservices';
 
 @Injectable()
@@ -11,10 +11,10 @@ export class DeleteColorUseCase {
 
   async execute({ id, user }: DataChangeById) {
     const color = await this.getColor(id);
-    console.log(color)
+    console.log(color);
     this.checkIfTheColorIsFound(color);
     await this.deleteColor(id, user);
-    return {}
+    return {};
   }
 
   async getColor(id: string) {
@@ -41,7 +41,6 @@ export class DeleteColorUseCase {
         deleted: true,
         active: false,
         deleted_at: new Date(),
-        deleted_by: user?.id ?? 'admin',
       });
     } catch {
       throw new RpcException({

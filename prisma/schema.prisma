@@ -19,9 +19,6 @@ model vehicle {
   created_at     DateTime @default(now()) @map("created_at")
   updated_at     DateTime @updatedAt @map("updated_at")
   deleted_at     DateTime? @map("deleted_at")
-  created_by     String?   @map("created_by")
-  updated_by     String?   @map("updated_by")
-  deleted_by     String?   @map("deleted_by")
   brand     brand    @relation(fields: [brand_id], references: [id])
   colors vehicle_color[]
 }
@@ -36,9 +33,6 @@ model vehicle_color {
   created_at     DateTime @default(now()) @map("created_at")
   updated_at     DateTime @updatedAt @map("updated_at")
   deleted_at     DateTime? @map("deleted_at")
-  created_by     String   @map("created_by")
-  updated_by     String?   @map("updated_by")
-  deleted_by     String?   @map("deleted_by")
   vehicle vehicle @relation(fields: [vehicle_id], references: [id])
   color color @relation(fields: [color_id], references: [id])
 }
@@ -51,9 +45,6 @@ model color {
   created_at     DateTime @default(now()) @map("created_at")
   updated_at     DateTime @updatedAt @map("updated_at")
   deleted_at     DateTime? @map("deleted_at")
-  created_by     String   @map("created_by")
-  updated_by     String?   @map("updated_by")
-  deleted_by     String?   @map("deleted_by")
   vehicles vehicle_color[]
 }
 
@@ -65,8 +56,23 @@ model brand {
   created_at     DateTime @default(now()) @map("created_at")
   updated_at     DateTime @updatedAt @map("updated_at")
   deleted_at     DateTime @updatedAt @map("deleted_at")
-  created_by     String   @map("created_by")
-  updated_by     String?   @map("updated_by")
-  deleted_by     String?   @map("deleted_by")
   vehicle     vehicle[]
+}
+
+model reservation {
+  id            String   @id @default(uuid()) @map("_id")
+  client_id     String
+  order_id      String
+  user_id       String
+  vehicle_id    String   
+  status        String
+  created_at     DateTime @default(now()) @map("created_at")
+  updated_at     DateTime @updatedAt @map("updated_at")
+}
+
+
+enum ReservationStatus {
+  RESERVED
+  CANCELLED
+  SOLD 
 }

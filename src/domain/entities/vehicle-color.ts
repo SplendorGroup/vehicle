@@ -1,3 +1,5 @@
+import { randomUUID } from "crypto";
+
 export class VehicleColor {
   id?: string;
   vehicle_id: string;
@@ -8,9 +10,6 @@ export class VehicleColor {
   created_at: Date;
   updated_at?: Date;
   deleted_at?: Date;
-  created_by: string;
-  updated_by?: string;
-  deleted_by?: string;
 
   constructor(
     props: Partial<VehicleColor>,
@@ -21,11 +20,11 @@ export class VehicleColor {
     Object.assign(this, props);
 
     if (!options?.update) {
-      this.id = crypto.randomUUID();
+      this.id = randomUUID();
+      this.created_at = new Date();
+    } else {
+      this.updated_at = new Date();
     }
 
-    if (props.created_at) {
-      this.created_at = new Date();
-    }
   }
 }

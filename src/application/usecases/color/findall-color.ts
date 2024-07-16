@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Color } from '@/domain/entities/color';
-import { Data } from '@/infraestructure/types/data';
-import { Pagination } from '@/infraestructure/types/pagination';
-import { ColorService } from '@/infraestructure/services/color';
+import { Data } from '@/domain/types/data';
+import { Pagination } from '@/domain/types/pagination';
+import { ColorService } from '@/application/services/color';
 
 @Injectable()
 export class FindAllColorUseCase {

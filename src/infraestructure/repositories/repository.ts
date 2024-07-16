@@ -4,7 +4,7 @@ import {
   Logger,
 } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { IRepository } from '../interfaces/irepository';
+import { IRepository } from '../../domain/interfaces/irepository';
 
 @Injectable()
 export class Repository implements IRepository {
@@ -405,8 +405,6 @@ export class Repository implements IRepository {
 
   async count(filter: any): Promise<any> {
     try {
-
-      
       if (filter?.start_date) {
         filter.start_date = new Date(filter?.start_date).toISOString();
         filter.start_date = new Date(filter?.start_date).toISOString();
@@ -462,7 +460,7 @@ export class Repository implements IRepository {
       const found_record = await this.model?.count({
         where: {
           ...this.applyCaseInsensitiveFilters(filter),
-          ...whereDate
+          ...whereDate,
         },
       });
       return found_record;

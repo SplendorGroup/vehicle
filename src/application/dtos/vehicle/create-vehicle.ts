@@ -1,6 +1,17 @@
 import { IsUniqueColorIdArray } from '@/infraestructure/validations/is-unique-color-id-array';
 import { Type } from 'class-transformer';
-import { IsArray, IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, IsUUID, IsUrl, Length, Min } from 'class-validator';
+import {
+  IsArray,
+  IsBoolean,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  IsUUID,
+  IsUrl,
+  Length,
+  Min,
+} from 'class-validator';
 
 export class VehicleColor {
   @IsUUID()

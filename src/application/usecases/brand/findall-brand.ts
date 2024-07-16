@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Brand } from '@/domain/entities/brand';
-import { Data } from '@/infraestructure/types/data';
-import { Pagination } from '@/infraestructure/types/pagination';
-import { BrandService } from '@/infraestructure/services/brand';
+import { Data } from '@/domain/types/data';
+import { Pagination } from '@/domain/types/pagination';
+import { BrandService } from '@/application/services/brand';
 
 @Injectable()
 export class FindAllBrandUseCase {
@@ -19,7 +19,7 @@ export class FindAllBrandUseCase {
     const in_page = this.countbrandsFiltered(brands);
     const pages = this.countPages(total, per_page);
 
-    const data = this.transformResponse(brands)
+    const data = this.transformResponse(brands);
     return this.findAllBrandsToResponse({
       total,
       pages,

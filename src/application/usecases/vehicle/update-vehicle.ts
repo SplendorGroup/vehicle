@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { VehicleService } from '@/infraestructure/services/vehicle';
+import { VehicleService } from '@/application/services/vehicle';
 import { Vehicle } from '@/domain/entities/vehicle';
-import { DataMountById } from '@/infraestructure/types/data';
-import { RequestUser } from '@/infraestructure/types/user';
+import { DataMountById } from '@/domain/types/data';
+import { RequestUser } from '@/domain/types/user';
 import { RpcException } from '@nestjs/microservices';
 import { CreateVehicleDTO } from '@/application/dtos/vehicle/create-vehicle';
 import { VehicleColor } from '@/domain/entities/vehicle-color';
-import { ColorService } from '@/infraestructure/services/color';
+import { ColorService } from '@/application/services/color';
 import { Color } from '@/domain/entities/color';
-import { VehicleColorService } from '@/infraestructure/services/vehicle-color';
-import { BrandService } from '@/infraestructure/services/brand';
+import { VehicleColorService } from '@/application/services/vehicle-color';
+import { BrandService } from '@/application/services/brand';
 import { Brand } from '@/domain/entities/brand';
 
 type VehicleCompleted = {
@@ -38,12 +38,6 @@ export class UpdateVehicleUseCase {
 
     const vehicle = await this.getVehicleById(id);
     this.checkIfTheVehicleExists(vehicle);
-
-    const vehicle_equal = await this.getVehicleEqual({
-      brand_id: data.brand_id,
-      model: data.model,
-    });
-    this.checkIfTheVehicleAlreadyExists(vehicle_equal, id);
 
     const color_ids = this.getColorIds(data.colors);
     const colors_checked_results = await this.checkColorIds(color_ids);
@@ -74,7 +68,7 @@ export class UpdateVehicleUseCase {
   checkIfTheBrandIsFound(brand: Brand) {
     if (!brand) {
       throw new RpcException({
-        code: 1400,
+        code: 1600,
         details: JSON.stringify({
           name: 'Brand Not Found',
           identify: 'BRAND_NOT_FOUND',
@@ -109,7 +103,6 @@ export class UpdateVehicleUseCase {
           year: data.year,
           price: data.price,
           available: data.available,
-          updated_by: user?.id ?? 'admin',
           updated_at: new Date(),
         },
         { update: true },
@@ -117,7 +110,7 @@ export class UpdateVehicleUseCase {
       return await this.vehicleService.update(vehicleId, vehicle);
     } catch {
       throw new RpcException({
-        code: 1303,
+        code: 1503,
         details: JSON.stringify({
           name: 'Vehicle Update Failed',
           identify: 'VEHICLE_UPDATE_FAILED',
@@ -137,7 +130,7 @@ export class UpdateVehicleUseCase {
 
     if (count_true > 1) {
       throw new RpcException({
-        code: 1501,
+        code: 1701,
         details: JSON.stringify({
           name: 'Colour Already Defined as Default',
           identify: 'COLOR_ALREADY_DEFINED_DEFAULT',
@@ -148,9 +141,6 @@ export class UpdateVehicleUseCase {
     }
   }
 
-  async getVehicleEqual({ brand_id, model }) {
-    return await this.vehicleService.findOne({ brand_id, model });
-  }
 
   getColorIds(colors: CreateVehicleDTO['colors']) {
     try {
@@ -173,7 +163,7 @@ export class UpdateVehicleUseCase {
 
     if (car_colors) {
       throw new RpcException({
-        code: 1500,
+        code: 1700,
         details: JSON.stringify({
           name: 'Color Not Found',
           identify: 'COLOR_NOT_FOUND',
@@ -194,7 +184,6 @@ export class UpdateVehicleUseCase {
         return new VehicleColor({
           vehicle_id,
           ...vehicle_color,
-          created_by: user_id ?? 'admin',
         });
       });
     } catch (error) {
@@ -211,24 +200,10 @@ export class UpdateVehicleUseCase {
     return await this.vehicleColorService.createMany(vehicle_colors);
   }
 
-  checkIfTheVehicleAlreadyExists(vehicle: Vehicle, id: string) {
-    if (vehicle && id != vehicle.id) {
-      throw new RpcException({
-        code: 1301,
-        details: JSON.stringify({
-          name: 'Vehicle Already Exists',
-          identify: 'VEHICLE_ALREADY_EXISTS',
-          status: 409,
-          message: 'The vehicle already exists.',
-        }),
-      });
-    }
-  }
-
   checkIfTheVehicleExists(vehicle: Vehicle) {
     if (!vehicle) {
       throw new RpcException({
-        code: 1301,
+        code: 1501,
         details: JSON.stringify({
           name: 'Vehicle Not Found',
           identify: 'VEHICLE_NOT_FOUND',

@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Brand } from '@/domain/entities/brand';
-import { BrandService } from '@/infraestructure/services/brand';
-import { DataChangeById } from '@/infraestructure/types/data';
-import { RequestUser } from '@/infraestructure/types/user';
+import { BrandService } from '@/application/services/brand';
+import { DataChangeById } from '@/domain/types/data';
+import { RequestUser } from '@/domain/types/user';
 import { RpcException } from '@nestjs/microservices';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class DeleteBrandUseCase {
   checkIfTheBrandIsFound(brand: Brand) {
     if (!brand) {
       throw new RpcException({
-        code: 1400,
+        code: 1600,
         details: JSON.stringify({
           name: 'Brand Not Found',
           identify: 'BRAND_NOT_FOUND',
@@ -39,11 +39,10 @@ export class DeleteBrandUseCase {
         deleted: true,
         active: false,
         deleted_at: new Date(),
-        deleted_by: user?.id ?? 'admin',
       });
     } catch {
       throw new RpcException({
-        code: 1404,
+        code: 1604,
         details: JSON.stringify({
           name: 'Brand Deletion Failed',
           identify: 'BRAND_DELETION_FAILED',

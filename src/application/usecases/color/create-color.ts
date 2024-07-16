@@ -1,34 +1,36 @@
 import { Injectable } from '@nestjs/common';
-import { Color } from '@/domain/entities/color';
-import { DataMount } from '@/infraestructure/types/data';
-import { RequestUser } from '@/infraestructure/types/user';
-import { ColorService } from '@/infraestructure/services/color';
+import { DataMount } from '@/domain/types/data';
+import { RequestUser } from '@/domain/types/user';
 import { RpcException } from '@nestjs/microservices';
+import { ColorFactory } from '@/domain/factories/color';
+import { ColorService } from '@/application/services/color';
+import { ColorMapper } from '@/domain/mappers/color';
+import { Color } from '@/domain/entities/color';
 
 @Injectable()
 export class CreateColorUseCase {
-  constructor(private readonly colorService: ColorService) {}
+  constructor(
+    private readonly colorService: ColorService,
+    private readonly colorFactory: ColorFactory,
+  ) {}
 
   async execute({ body: data, user }: DataMount<Partial<Color>>) {
     const color = await this.getColorByName(data.name);
     this.checkIfTheColorExists(color);
-    const data_response = await this.createColor(data, user);
-    return this.transformResponse(data_response);
+    const createdColor = await this.createColor(data, user);
+    return this.transformResponse(createdColor);
   }
 
-  async createColor(data: Partial<Color>, user: RequestUser) {
+  async createColor(data: Partial<ColorMapper>, user: RequestUser) {
     try {
-      const color = new Color({
-        ...data,
-        created_by: user?.id ?? 'admin',
-      });
-      return await this.colorService.create(color);
+      const colorDomain = this.colorFactory.create(data);
+      return await this.colorService.create(colorDomain);
     } catch {
       throw new RpcException({
         code: 1402,
         details: JSON.stringify({
           name: 'Color Creation Failed',
-          identify: 'BRAND_CREATION_FAILED',
+          identify: 'COLOR_CREATION_FAILED',
           status: 500,
           message: 'Failed to create color.',
         }),
@@ -40,13 +42,13 @@ export class CreateColorUseCase {
     return await this.colorService.findOne({ name });
   }
 
-  checkIfTheColorExists(color: Color) {
+  checkIfTheColorExists(color: any) {
     if (color) {
       throw new RpcException({
         code: 1401,
         details: JSON.stringify({
           name: 'Color Already Exists',
-          identify: 'BRAND_ALREADY_EXISTS',
+          identify: 'COLOR_ALREADY_EXISTS',
           status: 409,
           message: 'The color already exists.',
         }),
@@ -54,10 +56,7 @@ export class CreateColorUseCase {
     }
   }
 
-  transformResponse(color: Partial<Color>) {
-    return {
-      ...color,
-      created_at: new Date(color.created_at).toISOString(),
-    };
+  transformResponse(color: any) {
+    return ColorMapper.toResponse(color);
   }
 }

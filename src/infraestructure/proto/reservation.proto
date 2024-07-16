@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package reservation;
+
+message AuthUser {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  bool email_verify = 4;
+  repeated string roles = 5;
+  repeated string permissions = 6;
+}
+
+message ReservationEntity {
+  string id = 1;
+  string client_id = 2;
+  string order_id = 3;
+  string user_id = 4;
+  string vehicle_id = 5;
+  string reserved_at = 6;
+  string status = 7;
+  string created_at = 8;
+  string updated_at = 9;
+}
+
+message CreateReservationDTO {
+  string client_id = 1;
+  string order_id = 2;
+  string vehicle_id = 3;
+  string status = 4;
+}
+
+message CreateReservationRequest {
+  CreateReservationDTO body = 1;
+  AuthUser user = 2;
+}
+
+message CreateReservationResponse {
+  ReservationEntity reservation = 1;
+}
+
+message CancelReservationDTO {
+  string id = 1;
+}
+
+message CancelReservationRequest {
+  CancelReservationDTO body = 1;
+  AuthUser user = 2;
+}
+
+message CancelReservationResponse {
+  ReservationEntity reservation = 1;
+}
+
+message FindOneReservationDTO {
+  string id = 1;
+}
+
+message FindOneReservationRequest {
+  FindOneReservationDTO params = 1;
+  AuthUser user = 2;
+}
+
+message FindOneReservationResponse {
+  ReservationEntity reservation = 1;
+}
+
+message FindAllReservationDTO {
+  string client_id = 1;
+  string user_id = 2;
+  string vehicle_id = 3;
+  string status = 4;
+  int32 page = 5;
+  int32 limit = 6;
+}
+
+message FindAllReservationRequest {
+  FindAllReservationDTO query = 1;
+  AuthUser user = 2;
+}
+
+message FindAllReservationResponse {
+  repeated ReservationEntity reservations = 1;
+}
+
+service ReservationService {
+  rpc CreateReservation(CreateReservationRequest) returns (CreateReservationResponse);
+  rpc CancelReservation(CancelReservationRequest) returns (CancelReservationResponse);
+  rpc FindOneReservation(FindOneReservationRequest) returns (FindOneReservationResponse);
+  rpc FindAllReservations(FindAllReservationRequest) returns (FindAllReservationResponse);
+}

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grpc-config
+  namespace: {{ .Values.namespace }}
+data:
+  BRAND_SERVICE_PORT: 51600
+  VEHICLE_SERVICE_PORT: 51500
+  COLOR_SERVICE_PORT: 51700
+  RESERVATION_SERVICE_PORT: 52400
+  HOST: {{ .Values.config.grpc.host }}

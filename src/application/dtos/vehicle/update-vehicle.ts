@@ -1,5 +1,16 @@
 import { Type } from 'class-transformer';
-import { IsArray, IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString, IsUrl, IsUUID, Length, Min } from 'class-validator';
+import {
+  IsArray,
+  IsBoolean,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  IsUrl,
+  IsUUID,
+  Length,
+  Min,
+} from 'class-validator';
 
 export class VehicleColor {
   @IsUUID()

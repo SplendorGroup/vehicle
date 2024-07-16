@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { BrandService } from '@/infraestructure/services/brand';
+import { BrandService } from '@/application/services/brand';
 import { Brand } from '@/domain/entities/brand';
 import { RpcException } from '@nestjs/microservices';
 
@@ -10,7 +10,7 @@ export class FindOneBrandUseCase {
   async execute(id: string) {
     const brand = await this.getBrandById(id);
     this.checkIfTheBrandIsFound(brand);
-    const data = this.transformResponse(brand)
+    const data = this.transformResponse(brand);
     return data;
   }
 
@@ -21,7 +21,7 @@ export class FindOneBrandUseCase {
   checkIfTheBrandIsFound(brand: Brand) {
     if (!brand) {
       throw new RpcException({
-        code: 1400,
+        code: 1600,
         details: JSON.stringify({
           name: 'Brand Not Found',
           identify: 'BRAND_NOT_FOUND',

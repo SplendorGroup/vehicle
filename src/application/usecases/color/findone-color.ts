@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ColorService } from '@/infraestructure/services/color';
+import { ColorService } from '@/application/services/color';
 import { Color } from '@/domain/entities/color';
 import { RpcException } from '@nestjs/microservices';
 
@@ -11,7 +11,7 @@ export class FindOneColorUseCase {
     const color = await this.getColorById(id);
     this.checkIfTheColorIsFound(color);
 
-    const data = this.transformResponse(color)
+    const data = this.transformResponse(color);
     return data;
   }
 
@@ -34,9 +34,9 @@ export class FindOneColorUseCase {
   }
 
   transformResponse(color: Partial<Color>) {
-      return {
-        ...color,
-        created_at: new Date(color.created_at).toISOString(),
-      };
+    return {
+      ...color,
+      created_at: new Date(color.created_at).toISOString(),
+    };
   }
 }

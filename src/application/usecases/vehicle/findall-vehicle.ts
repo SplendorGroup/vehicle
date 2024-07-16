@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { VehicleService } from '@/infraestructure/services/vehicle';
+import { VehicleService } from '@/application/services/vehicle';
 import { Vehicle } from '@/domain/entities/vehicle';
-import { Data } from '@/infraestructure/types/data';
-import { Pagination } from '@/infraestructure/types/pagination';
+import { Data } from '@/domain/types/data';
+import { Pagination } from '@/domain/types/pagination';
 import { VehicleColor } from '@/domain/entities/vehicle-color';
 import { Color } from '@/domain/entities/color';
 import { Brand } from '@/domain/entities/brand';
@@ -120,7 +120,7 @@ export class FindAllVehicleUseCase {
       this.selectWithFilterWithOrderLowPrice(filter, order),
     ]);
 
-    console.log(results)
+    console.log(results);
 
     for (const result of results) {
       if (result != undefined) {
@@ -139,7 +139,7 @@ export class FindAllVehicleUseCase {
     return await this.vehicleService.count({
       ...data?.filter,
       active: true,
-      deleted: false
+      deleted: false,
     });
   }
 

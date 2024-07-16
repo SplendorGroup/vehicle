@@ -9,12 +9,12 @@ import {
 class IsUniqueColorIdArrayConstraint implements ValidatorConstraintInterface {
   validate(colors: any[]) {
     if (!Array.isArray(colors)) {
-      return false; 
+      return false;
     }
 
     const color_ids = colors.map((color) => color.color_id);
     const unique_color_ids = new Set(color_ids);
-    return unique_color_ids.size === color_ids.length; 
+    return unique_color_ids.size === color_ids.length;
   }
 
   defaultMessage() {

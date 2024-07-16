@@ -6,28 +6,27 @@ async function main() {
   const toyota = await prisma.brand.create({
     data: {
       name: 'Toyota',
-      created_by: 'admin',
+
     },
   });
 
   const honda = await prisma.brand.create({
     data: {
       name: 'Honda',
-      created_by: 'admin',
     },
   });
 
   const red = await prisma.color.create({
     data: {
       name: 'Red',
-      created_by: 'admin',
+
     },
   });
 
   const blue = await prisma.color.create({
     data: {
       name: 'Blue',
-      created_by: 'admin',
+
     },
   });
 
@@ -37,7 +36,7 @@ async function main() {
       model: 'Corolla',
       year: 2021,
       price: 20000,
-      created_by: 'admin',
+
     } as any,
   });
 
@@ -47,7 +46,7 @@ async function main() {
       model: 'Civic',
       year: 2022,
       price: 22.000,
-      created_by: 'admin',
+
     } as any,
   });
 
@@ -57,7 +56,7 @@ async function main() {
       color_id: red.id,
       image: 'corolla_red.jpg',
       default: true,
-      created_by: 'admin',
+
     } as any,
   });
 
@@ -67,7 +66,7 @@ async function main() {
       color_id: blue.id,
       image: 'civic_blue.jpg',
       default: true,
-      created_by: 'admin',
+
     } as any,
   });
 }

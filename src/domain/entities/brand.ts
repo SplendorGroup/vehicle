@@ -1,3 +1,4 @@
+import { randomUUID } from 'crypto';
 import { Vehicle } from './vehicle';
 
 export class Brand {
@@ -8,9 +9,6 @@ export class Brand {
   created_at: Date;
   updated_at?: Date;
   deleted_at?: Date;
-  created_by: string;
-  updated_by?: string;
-  deleted_by?: string;
   vehicle: Vehicle[];
 
   constructor(
@@ -19,14 +17,12 @@ export class Brand {
       update?: boolean;
     },
   ) {
-    Object.assign(this, props);
-
-    if (!options?.update) {
-      this.id = crypto.randomUUID();
-    }
-
-    if (props.created_at) {
-      this.created_at = new Date();
-    }
+     Object.assign(this, props);
+     if (!options?.update) {
+       this.id = randomUUID();
+       this.created_at = new Date();
+     } else {
+       this.updated_at = new Date();
+     }
   }
 }

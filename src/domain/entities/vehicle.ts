@@ -1,18 +1,18 @@
+import { Reservation } from './reservation';
+
 export class Vehicle {
-  id?: string;
+  id: string;
   brand_id: string;
   model: string;
   year: number;
   price: number;
-  active: boolean;
   available: boolean;
-  deleted?: boolean;
+  active: boolean;
+  deleted: boolean;
   created_at: Date;
-  updated_at?: Date;
+  updated_at: Date;
   deleted_at?: Date;
-  created_by: string;
-  updated_by?: string;
-  deleted_by?: string;
+  reservation?: Reservation;
 
   constructor(
     props: Partial<Vehicle>,

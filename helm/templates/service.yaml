@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: {{ .Chart.Name }}
+  ports:
+    - name: vehicle
+      port: 51500
+      targetPort: 51500
+      protocol: TCP
+    - name: brand
+      port: 51600
+      targetPort: 51600
+      protocol: TCP
+    - name: color
+      port: 51700
+      targetPort: 51700
+      protocol: TCP
+    - name: reservation
+      port: 52400
+      targetPort: 52400
+      protocol: TCP

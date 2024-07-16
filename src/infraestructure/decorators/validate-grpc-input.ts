@@ -1,7 +1,7 @@
 import { validate } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { RpcException } from '@nestjs/microservices';
-import { addPeriodIfMissing } from '@/infraestructure/utils/add-period-if-missing';
+import { addPeriodIfMissing } from '@/infraestructure/helpers/add-period-if-missing';
 
 export const ValidateGrpcInput = (
   dtos: {

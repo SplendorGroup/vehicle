@@ -1,0 +1,3028 @@
+{
+  "nodes": {
+    "70947512": {
+      "id": "70947512",
+      "label": "UpdateVehicleUseCase",
+      "parent": "-2086140545",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Vehicle",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UpdateVehicleUseCase"
+      }
+    },
+    "203550704": {
+      "id": "203550704",
+      "label": "ExternalContextCreator",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ExternalContextCreator",
+        "initTime": 12.761704000000009
+      }
+    },
+    "211572259": {
+      "id": "211572259",
+      "label": "ConfigHostModule",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "223287843": {
+      "id": "223287843",
+      "label": "Application",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "225063248": {
+      "id": "225063248",
+      "label": "InternalCoreModule",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "InternalCoreModule",
+        "initTime": 13.547104999999988
+      }
+    },
+    "285897371": {
+      "id": "285897371",
+      "label": "color",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "color",
+        "initTime": 17.441200999999978
+      }
+    },
+    "303302557": {
+      "id": "303302557",
+      "label": "ModuleRef",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "303754800": {
+      "id": "303754800",
+      "label": "ScheduleModule",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "356386502": {
+      "id": "356386502",
+      "label": "ScheduleModule",
+      "parent": "303754800",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ScheduleModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ScheduleModule",
+        "initTime": 11.770787000000041
+      }
+    },
+    "400681591": {
+      "id": "400681591",
+      "label": "DiscoveryService",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "DiscoveryService",
+        "initTime": 20.157555000000002
+      }
+    },
+    "502532374": {
+      "id": "502532374",
+      "label": "SCHEDULE_MODULE_OPTIONS",
+      "parent": "303754800",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ScheduleModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SCHEDULE_MODULE_OPTIONS"
+      }
+    },
+    "555176277": {
+      "id": "555176277",
+      "label": "InternalCoreModule",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": true,
+        "internal": true
+      }
+    },
+    "574680834": {
+      "id": "574680834",
+      "label": "VehicleController",
+      "parent": "-1908243289",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "Presentation",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "VehicleController"
+      }
+    },
+    "585414186": {
+      "id": "585414186",
+      "label": "ModuleRef",
+      "parent": "303754800",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ScheduleModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "663056846": {
+      "id": "663056846",
+      "label": "vehicle_color",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "vehicle_color",
+        "initTime": 17.374363000000017
+      }
+    },
+    "671882984": {
+      "id": "671882984",
+      "label": "Reflector",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "Reflector",
+        "initTime": 13.428258999999912
+      }
+    },
+    "716825598": {
+      "id": "716825598",
+      "label": "ColorService",
+      "parent": "223287843",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Application",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ColorService"
+      }
+    },
+    "746929514": {
+      "id": "746929514",
+      "label": "t",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "t",
+        "initTime": 10.400547999999958
+      }
+    },
+    "804172793": {
+      "id": "804172793",
+      "label": "FindAllVehicleUseCase",
+      "parent": "-2086140545",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Vehicle",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FindAllVehicleUseCase"
+      }
+    },
+    "822426632": {
+      "id": "822426632",
+      "label": "SchedulerOrchestrator",
+      "parent": "303754800",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ScheduleModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "SchedulerOrchestrator",
+        "initTime": 18.825863000000027
+      }
+    },
+    "889654164": {
+      "id": "889654164",
+      "label": "SchedulerMetadataAccessor",
+      "parent": "303754800",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ScheduleModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "SchedulerMetadataAccessor",
+        "initTime": 20.830104000000006
+      }
+    },
+    "911571347": {
+      "id": "911571347",
+      "label": "CreateColorUseCase",
+      "parent": "-2043994506",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Color",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CreateColorUseCase"
+      }
+    },
+    "915774976": {
+      "id": "915774976",
+      "label": "ApplicationConfig",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "930519593": {
+      "id": "930519593",
+      "label": "ConfigService",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "Symbol(CONFIG_SERVICE)",
+        "initTime": 19.567897000000016
+      }
+    },
+    "974685582": {
+      "id": "974685582",
+      "label": "MongodbConnection",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "MongodbConnection",
+        "initTime": 10.407339999999976
+      }
+    },
+    "1041299520": {
+      "id": "1041299520",
+      "label": "Infraestructure",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "Infraestructure",
+        "initTime": 10.417474999999968
+      }
+    },
+    "1063746662": {
+      "id": "1063746662",
+      "label": "CONFIGURATION_TOKEN",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CONFIGURATION_TOKEN",
+        "initTime": 11.789658999999915
+      }
+    },
+    "1089325073": {
+      "id": "1089325073",
+      "label": "Domain",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "1393525306": {
+      "id": "1393525306",
+      "label": "ModuleRef",
+      "parent": "-1999891980",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "App",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1412289894": {
+      "id": "1412289894",
+      "label": "UpdateColorUseCase",
+      "parent": "-2043994506",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Color",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UpdateColorUseCase"
+      }
+    },
+    "1414792182": {
+      "id": "1414792182",
+      "label": "ApplicationConfig",
+      "parent": "1089325073",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Domain",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1434456218": {
+      "id": "1434456218",
+      "label": "Reflector",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": true,
+        "token": "Reflector",
+        "initTime": 20.810520999999994
+      }
+    },
+    "1452482082": {
+      "id": "1452482082",
+      "label": "ReservationFactory",
+      "parent": "1089325073",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Domain",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ReservationFactory",
+        "initTime": 9.95782500000007
+      }
+    },
+    "1466521159": {
+      "id": "1466521159",
+      "label": "BrandFactory",
+      "parent": "1089325073",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Domain",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "BrandFactory",
+        "initTime": 9.913607999999954
+      }
+    },
+    "1583056222": {
+      "id": "1583056222",
+      "label": "ApplicationConfig",
+      "parent": "223287843",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Application",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1589870796": {
+      "id": "1589870796",
+      "label": "ApplicationConfig",
+      "parent": "-1908243289",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Presentation",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1603204089": {
+      "id": "1603204089",
+      "label": "ColorController",
+      "parent": "-1908243289",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "Presentation",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ColorController"
+      }
+    },
+    "1608049769": {
+      "id": "1608049769",
+      "label": "ModuleRef",
+      "parent": "223287843",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Application",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1690574933": {
+      "id": "1690574933",
+      "label": "ModuleRef",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "1712628187": {
+      "id": "1712628187",
+      "label": "ConfigModule",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "1769319388": {
+      "id": "1769319388",
+      "label": "ConfigModule",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ConfigModule",
+        "initTime": 12.788742999999954
+      }
+    },
+    "1787828844": {
+      "id": "1787828844",
+      "label": "ConfigHostModule",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ConfigHostModule",
+        "initTime": 11.808756000000017
+      }
+    },
+    "1788424010": {
+      "id": "1788424010",
+      "label": "FindOneBrandUseCase",
+      "parent": "-2044839270",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Brand",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FindOneBrandUseCase"
+      }
+    },
+    "1873504178": {
+      "id": "1873504178",
+      "label": "vehicle",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "vehicle",
+        "initTime": 17.631099000000063
+      }
+    },
+    "1879849979": {
+      "id": "1879849979",
+      "label": "SchedulerRegistry",
+      "parent": "303754800",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ScheduleModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "SchedulerRegistry",
+        "initTime": 10.46868399999994
+      }
+    },
+    "1891341303": {
+      "id": "1891341303",
+      "label": "VehicleColorFactory",
+      "parent": "1089325073",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Domain",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "VehicleColorFactory",
+        "initTime": 9.926126000000068
+      }
+    },
+    "1919157847": {
+      "id": "1919157847",
+      "label": "REQUEST",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": false,
+        "scope": 2,
+        "transient": false,
+        "exported": true,
+        "token": "REQUEST",
+        "initTime": 8.609673000000043
+      }
+    },
+    "1929288989": {
+      "id": "1929288989",
+      "label": "BrandController",
+      "parent": "-1908243289",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "Presentation",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "BrandController"
+      }
+    },
+    "1967731808": {
+      "id": "1967731808",
+      "label": "App",
+      "parent": "-1999891980",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "App",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "App",
+        "initTime": 12.800078999999982
+      }
+    },
+    "2038368759": {
+      "id": "2038368759",
+      "label": "brand",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "brand",
+        "initTime": 17.52150800000004
+      }
+    },
+    "2118694856": {
+      "id": "2118694856",
+      "label": "ApplicationConfig",
+      "parent": "211572259",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ConfigHostModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-1486320561": {
+      "id": "-1486320561",
+      "label": "ModuleRef",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-651043398": {
+      "id": "-651043398",
+      "label": "ApplicationConfig",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-255469305": {
+      "id": "-255469305",
+      "label": "INQUIRER",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "scope": 1,
+        "transient": true,
+        "exported": true,
+        "token": "INQUIRER",
+        "initTime": 8.597300000000018
+      }
+    },
+    "-26938366": {
+      "id": "-26938366",
+      "label": "ModulesContainer",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ModulesContainer",
+        "initTime": 12.75459699999999
+      }
+    },
+    "-326832201": {
+      "id": "-326832201",
+      "label": "HttpAdapterHost",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "HttpAdapterHost",
+        "initTime": 12.747406999999953
+      }
+    },
+    "-702581189": {
+      "id": "-702581189",
+      "label": "LazyModuleLoader",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "LazyModuleLoader",
+        "initTime": 12.751396
+      }
+    },
+    "-1904419534": {
+      "id": "-1904419534",
+      "label": "SerializedGraph",
+      "parent": "555176277",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "InternalCoreModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "SerializedGraph",
+        "initTime": 12.738878999999997
+      }
+    },
+    "-1999891980": {
+      "id": "-1999891980",
+      "label": "App",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1253513169": {
+      "id": "-1253513169",
+      "label": "ApplicationConfig",
+      "parent": "-1999891980",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "App",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-503631789": {
+      "id": "-503631789",
+      "label": "ConfigService",
+      "parent": "1712628187",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ConfigModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ConfigService"
+      }
+    },
+    "-968002283": {
+      "id": "-968002283",
+      "label": "ApplicationConfig",
+      "parent": "303754800",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ScheduleModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-1945923175": {
+      "id": "-1945923175",
+      "label": "ScheduleExplorer",
+      "parent": "303754800",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ScheduleModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ScheduleExplorer"
+      }
+    },
+    "-643397745": {
+      "id": "-643397745",
+      "label": "DiscoveryModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1048394624": {
+      "id": "-1048394624",
+      "label": "DiscoveryModule",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "DiscoveryModule",
+        "initTime": 10.442119000000048
+      }
+    },
+    "-501891371": {
+      "id": "-501891371",
+      "label": "ModuleRef",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-1413161654": {
+      "id": "-1413161654",
+      "label": "ApplicationConfig",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-438112115": {
+      "id": "-438112115",
+      "label": "MetadataScanner",
+      "parent": "-643397745",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "DiscoveryModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "MetadataScanner",
+        "initTime": 10.488253999999984
+      }
+    },
+    "-1166512175": {
+      "id": "-1166512175",
+      "label": "Infraestructure",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1025005801": {
+      "id": "-1025005801",
+      "label": "ModuleRef",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-1936276084": {
+      "id": "-1936276084",
+      "label": "ApplicationConfig",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-1673142510": {
+      "id": "-1673142510",
+      "label": "reservation",
+      "parent": "-1166512175",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Infraestructure",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "reservation",
+        "initTime": 17.300866000000042
+      }
+    },
+    "-1674688824": {
+      "id": "-1674688824",
+      "label": "Domain",
+      "parent": "1089325073",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Domain",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "Domain",
+        "initTime": 9.96929
+      }
+    },
+    "-556520949": {
+      "id": "-556520949",
+      "label": "ModuleRef",
+      "parent": "1089325073",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Domain",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-1795596606": {
+      "id": "-1795596606",
+      "label": "VehicleFactory",
+      "parent": "1089325073",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Domain",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "VehicleFactory",
+        "initTime": 9.93432800000005
+      }
+    },
+    "-1891723285": {
+      "id": "-1891723285",
+      "label": "ColorFactory",
+      "parent": "1089325073",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Domain",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ColorFactory",
+        "initTime": 9.919704000000024
+      }
+    },
+    "-470752768": {
+      "id": "-470752768",
+      "label": "Application",
+      "parent": "223287843",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Application",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "Application",
+        "initTime": 9.907492000000047
+      }
+    },
+    "-1030504670": {
+      "id": "-1030504670",
+      "label": "BrandService",
+      "parent": "223287843",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Application",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "BrandService"
+      }
+    },
+    "-139670649": {
+      "id": "-139670649",
+      "label": "VehicleService",
+      "parent": "223287843",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Application",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "VehicleService"
+      }
+    },
+    "-260796558": {
+      "id": "-260796558",
+      "label": "VehicleColorService",
+      "parent": "223287843",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Application",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "VehicleColorService"
+      }
+    },
+    "-551311321": {
+      "id": "-551311321",
+      "label": "ReservationService",
+      "parent": "223287843",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Application",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ReservationService"
+      }
+    },
+    "-2086140545": {
+      "id": "-2086140545",
+      "label": "Vehicle",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1528546688": {
+      "id": "-1528546688",
+      "label": "Vehicle",
+      "parent": "-2086140545",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Vehicle",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "Vehicle",
+        "initTime": 9.905330999999933
+      }
+    },
+    "-1567759675": {
+      "id": "-1567759675",
+      "label": "ModuleRef",
+      "parent": "-2086140545",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Vehicle",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-586594758": {
+      "id": "-586594758",
+      "label": "ApplicationConfig",
+      "parent": "-2086140545",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Vehicle",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-2073405339": {
+      "id": "-2073405339",
+      "label": "CreateVehicleUseCase",
+      "parent": "-2086140545",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Vehicle",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CreateVehicleUseCase"
+      }
+    },
+    "-1702550200": {
+      "id": "-1702550200",
+      "label": "DeleteVehicleUseCase",
+      "parent": "-2086140545",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Vehicle",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "DeleteVehicleUseCase"
+      }
+    },
+    "-557867948": {
+      "id": "-557867948",
+      "label": "FindOneVehicleUseCase",
+      "parent": "-2086140545",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Vehicle",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FindOneVehicleUseCase"
+      }
+    },
+    "-2043994506": {
+      "id": "-2043994506",
+      "label": "Color",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1037823520": {
+      "id": "-1037823520",
+      "label": "Color",
+      "parent": "-2043994506",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Color",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "Color",
+        "initTime": 9.177318000000014
+      }
+    },
+    "-850160324": {
+      "id": "-850160324",
+      "label": "ModuleRef",
+      "parent": "-2043994506",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Color",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-2033495567": {
+      "id": "-2033495567",
+      "label": "ApplicationConfig",
+      "parent": "-2043994506",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Color",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-798256266": {
+      "id": "-798256266",
+      "label": "DeleteColorUseCase",
+      "parent": "-2043994506",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Color",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "DeleteColorUseCase"
+      }
+    },
+    "-102842585": {
+      "id": "-102842585",
+      "label": "FindAllColorUseCase",
+      "parent": "-2043994506",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Color",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FindAllColorUseCase"
+      }
+    },
+    "-535819006": {
+      "id": "-535819006",
+      "label": "FindOneColorUseCase",
+      "parent": "-2043994506",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Color",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FindOneColorUseCase"
+      }
+    },
+    "-2044839270": {
+      "id": "-2044839270",
+      "label": "Brand",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-953939872": {
+      "id": "-953939872",
+      "label": "Brand",
+      "parent": "-2044839270",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Brand",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "Brand",
+        "initTime": 8.756264999999985
+      }
+    },
+    "-851005088": {
+      "id": "-851005088",
+      "label": "ModuleRef",
+      "parent": "-2044839270",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Brand",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-2034340331": {
+      "id": "-2034340331",
+      "label": "ApplicationConfig",
+      "parent": "-2044839270",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Brand",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-1059152933": {
+      "id": "-1059152933",
+      "label": "CreateBrandUseCase",
+      "parent": "-2044839270",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Brand",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CreateBrandUseCase"
+      }
+    },
+    "-583711810": {
+      "id": "-583711810",
+      "label": "DeleteBrandUseCase",
+      "parent": "-2044839270",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Brand",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "DeleteBrandUseCase"
+      }
+    },
+    "-2073566865": {
+      "id": "-2073566865",
+      "label": "FindAllBrandUseCase",
+      "parent": "-2044839270",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Brand",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "FindAllBrandUseCase"
+      }
+    },
+    "-558434386": {
+      "id": "-558434386",
+      "label": "UpdateBrandUseCase",
+      "parent": "-2044839270",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "Brand",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "UpdateBrandUseCase"
+      }
+    },
+    "-1908243289": {
+      "id": "-1908243289",
+      "label": "Presentation",
+      "metadata": {
+        "type": "module",
+        "global": true,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1703436428": {
+      "id": "-1703436428",
+      "label": "Presentation",
+      "parent": "-1908243289",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Presentation",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "Presentation",
+        "initTime": 8.364925999999969
+      }
+    },
+    "-1930296543": {
+      "id": "-1930296543",
+      "label": "ModuleRef",
+      "parent": "-1908243289",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "Presentation",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    }
+  },
+  "edges": {
+    "6364844": {
+      "source": "-2044839270",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "Presentation"
+      },
+      "id": "6364844"
+    },
+    "48842316": {
+      "source": "1712628187",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "48842316"
+    },
+    "59656243": {
+      "source": "1089325073",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "Presentation"
+      },
+      "id": "59656243"
+    },
+    "75299030": {
+      "source": "-2044839270",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "75299030"
+    },
+    "134371549": {
+      "source": "-1908243289",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "134371549"
+    },
+    "147885731": {
+      "source": "1712628187",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "147885731"
+    },
+    "184060730": {
+      "source": "-643397745",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "184060730"
+    },
+    "189694679": {
+      "source": "1434456218",
+      "target": "671882984",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "InternalCoreModule",
+        "sourceClassName": "Reflector",
+        "targetClassName": "Reflector",
+        "sourceClassToken": "Reflector",
+        "targetClassToken": "Reflector",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "189694679"
+    },
+    "219512487": {
+      "source": "-2043994506",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "219512487"
+    },
+    "240945519": {
+      "source": "-1673142510",
+      "target": "746929514",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "Infraestructure",
+        "sourceClassName": "reservation",
+        "targetClassName": "t",
+        "sourceClassToken": "reservation",
+        "targetClassToken": "t",
+        "targetModuleName": "Infraestructure",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "240945519"
+    },
+    "295769692": {
+      "source": "-2044839270",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "295769692"
+    },
+    "347481268": {
+      "source": "-1908243289",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "347481268"
+    },
+    "353572985": {
+      "source": "1712628187",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "353572985"
+    },
+    "367415987": {
+      "source": "-2086140545",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "Application"
+      },
+      "id": "367415987"
+    },
+    "392637353": {
+      "source": "-2043994506",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "Application"
+      },
+      "id": "392637353"
+    },
+    "408498623": {
+      "source": "223287843",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "408498623"
+    },
+    "426031447": {
+      "source": "-1166512175",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "426031447"
+    },
+    "538396590": {
+      "source": "-2043994506",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "538396590"
+    },
+    "559919802": {
+      "source": "-643397745",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "Brand"
+      },
+      "id": "559919802"
+    },
+    "581267957": {
+      "source": "-643397745",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "581267957"
+    },
+    "584653416": {
+      "source": "1712628187",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "584653416"
+    },
+    "636928068": {
+      "source": "-1999891980",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "636928068"
+    },
+    "640744466": {
+      "source": "223287843",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "640744466"
+    },
+    "677989064": {
+      "source": "-643397745",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "677989064"
+    },
+    "781399411": {
+      "source": "303754800",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "Color"
+      },
+      "id": "781399411"
+    },
+    "795461321": {
+      "source": "211572259",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "Brand"
+      },
+      "id": "795461321"
+    },
+    "799465503": {
+      "source": "-2044839270",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "799465503"
+    },
+    "815713361": {
+      "source": "303754800",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "815713361"
+    },
+    "930938093": {
+      "source": "-2086140545",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "Presentation"
+      },
+      "id": "930938093"
+    },
+    "975545568": {
+      "source": "211572259",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "975545568"
+    },
+    "996204545": {
+      "source": "-1999891980",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "Color"
+      },
+      "id": "996204545"
+    },
+    "1064982417": {
+      "source": "211572259",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "1064982417"
+    },
+    "1196809990": {
+      "source": "303754800",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "Presentation"
+      },
+      "id": "1196809990"
+    },
+    "1205345425": {
+      "source": "1089325073",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "1205345425"
+    },
+    "1212846462": {
+      "source": "1089325073",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1212846462"
+    },
+    "1254295270": {
+      "source": "1089325073",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "Color"
+      },
+      "id": "1254295270"
+    },
+    "1286790328": {
+      "source": "-2086140545",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "1286790328"
+    },
+    "1301672819": {
+      "source": "211572259",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "Presentation"
+      },
+      "id": "1301672819"
+    },
+    "1320742538": {
+      "source": "-2086140545",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1320742538"
+    },
+    "1394670598": {
+      "source": "-1908243289",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "Brand"
+      },
+      "id": "1394670598"
+    },
+    "1452745785": {
+      "source": "-1166512175",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "Application"
+      },
+      "id": "1452745785"
+    },
+    "1476243610": {
+      "source": "303754800",
+      "target": "-643397745",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "DiscoveryModule"
+      },
+      "id": "1476243610"
+    },
+    "1486701936": {
+      "source": "-2086140545",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "Domain"
+      },
+      "id": "1486701936"
+    },
+    "1555245416": {
+      "source": "223287843",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "Brand"
+      },
+      "id": "1555245416"
+    },
+    "1579691315": {
+      "source": "-2043994506",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "Brand"
+      },
+      "id": "1579691315"
+    },
+    "1582491958": {
+      "source": "-1908243289",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1582491958"
+    },
+    "1648645591": {
+      "source": "-2086140545",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1648645591"
+    },
+    "1700226274": {
+      "source": "223287843",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "Presentation"
+      },
+      "id": "1700226274"
+    },
+    "1712342345": {
+      "source": "1089325073",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "Brand"
+      },
+      "id": "1712342345"
+    },
+    "1712371732": {
+      "source": "-2044839270",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "Application"
+      },
+      "id": "1712371732"
+    },
+    "1715351585": {
+      "source": "1089325073",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "Application"
+      },
+      "id": "1715351585"
+    },
+    "1720055811": {
+      "source": "303754800",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "Domain"
+      },
+      "id": "1720055811"
+    },
+    "1731674536": {
+      "source": "889654164",
+      "target": "671882984",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ScheduleModule",
+        "sourceClassName": "SchedulerMetadataAccessor",
+        "targetClassName": "Reflector",
+        "sourceClassToken": "SchedulerMetadataAccessor",
+        "targetClassToken": "Reflector",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "1731674536"
+    },
+    "1733038297": {
+      "source": "-2044839270",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "1733038297"
+    },
+    "1795307761": {
+      "source": "-1999891980",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "1795307761"
+    },
+    "1885225748": {
+      "source": "-2043994506",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "1885225748"
+    },
+    "1934951374": {
+      "source": "223287843",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1934951374"
+    },
+    "1944669029": {
+      "source": "1089325073",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1944669029"
+    },
+    "1971930667": {
+      "source": "-2086140545",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "1971930667"
+    },
+    "2049453981": {
+      "source": "-2086140545",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "2049453981"
+    },
+    "2121746508": {
+      "source": "223287843",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "2121746508"
+    },
+    "2123204464": {
+      "source": "211572259",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "Domain"
+      },
+      "id": "2123204464"
+    },
+    "2135305541": {
+      "source": "1712628187",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "2135305541"
+    },
+    "-951393523": {
+      "source": "930519593",
+      "target": "1063746662",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ConfigHostModule",
+        "sourceClassName": "ConfigService",
+        "targetClassName": "CONFIGURATION_TOKEN",
+        "sourceClassToken": "Symbol(CONFIG_SERVICE)",
+        "targetClassToken": "CONFIGURATION_TOKEN",
+        "targetModuleName": "ConfigHostModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-951393523"
+    },
+    "-572606460": {
+      "source": "822426632",
+      "target": "1879849979",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ScheduleModule",
+        "sourceClassName": "SchedulerOrchestrator",
+        "targetClassName": "SchedulerRegistry",
+        "sourceClassToken": "SchedulerOrchestrator",
+        "targetClassToken": "SchedulerRegistry",
+        "targetModuleName": "ScheduleModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-572606460"
+    },
+    "-526224504": {
+      "source": "1873504178",
+      "target": "746929514",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "Infraestructure",
+        "sourceClassName": "vehicle",
+        "targetClassName": "t",
+        "sourceClassToken": "vehicle",
+        "targetClassToken": "t",
+        "targetModuleName": "Infraestructure",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-526224504"
+    },
+    "-913383979": {
+      "source": "2038368759",
+      "target": "746929514",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "Infraestructure",
+        "sourceClassName": "brand",
+        "targetClassName": "t",
+        "sourceClassToken": "brand",
+        "targetClassToken": "t",
+        "targetModuleName": "Infraestructure",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-913383979"
+    },
+    "-148359102": {
+      "source": "285897371",
+      "target": "746929514",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "Infraestructure",
+        "sourceClassName": "color",
+        "targetClassName": "t",
+        "sourceClassToken": "color",
+        "targetClassToken": "t",
+        "targetModuleName": "Infraestructure",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-148359102"
+    },
+    "-1297040136": {
+      "source": "663056846",
+      "target": "746929514",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "Infraestructure",
+        "sourceClassName": "vehicle_color",
+        "targetClassName": "t",
+        "sourceClassToken": "vehicle_color",
+        "targetClassToken": "t",
+        "targetModuleName": "Infraestructure",
+        "keyOrIndex": 0,
+        "injectionType": "constructor"
+      },
+      "id": "-1297040136"
+    },
+    "-2000282598": {
+      "source": "-1999891980",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-2000282598"
+    },
+    "-439398369": {
+      "source": "-1999891980",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "Domain"
+      },
+      "id": "-439398369"
+    },
+    "-2113387796": {
+      "source": "-1999891980",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "Application"
+      },
+      "id": "-2113387796"
+    },
+    "-1417398316": {
+      "source": "-1999891980",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "Presentation"
+      },
+      "id": "-1417398316"
+    },
+    "-445345154": {
+      "source": "-1999891980",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-445345154"
+    },
+    "-1708314255": {
+      "source": "-1999891980",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1708314255"
+    },
+    "-1308623561": {
+      "source": "-1999891980",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-1308623561"
+    },
+    "-695690826": {
+      "source": "-1999891980",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "App",
+        "targetModuleName": "Brand"
+      },
+      "id": "-695690826"
+    },
+    "-1998699099": {
+      "source": "1712628187",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "Domain"
+      },
+      "id": "-1998699099"
+    },
+    "-654257274": {
+      "source": "1712628187",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "Application"
+      },
+      "id": "-654257274"
+    },
+    "-1860135605": {
+      "source": "1712628187",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "Color"
+      },
+      "id": "-1860135605"
+    },
+    "-169364882": {
+      "source": "1712628187",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "Brand"
+      },
+      "id": "-169364882"
+    },
+    "-1091479378": {
+      "source": "1712628187",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigModule",
+        "targetModuleName": "Presentation"
+      },
+      "id": "-1091479378"
+    },
+    "-1995183955": {
+      "source": "211572259",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1995183955"
+    },
+    "-60954175": {
+      "source": "211572259",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-60954175"
+    },
+    "-1462843423": {
+      "source": "211572259",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "Application"
+      },
+      "id": "-1462843423"
+    },
+    "-896464066": {
+      "source": "211572259",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-896464066"
+    },
+    "-1126963930": {
+      "source": "211572259",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ConfigHostModule",
+        "targetModuleName": "Color"
+      },
+      "id": "-1126963930"
+    },
+    "-734493696": {
+      "source": "303754800",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-734493696"
+    },
+    "-1573745964": {
+      "source": "303754800",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-1573745964"
+    },
+    "-1634135507": {
+      "source": "303754800",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "-1634135507"
+    },
+    "-1163973522": {
+      "source": "303754800",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "Application"
+      },
+      "id": "-1163973522"
+    },
+    "-1681942389": {
+      "source": "303754800",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-1681942389"
+    },
+    "-1661829930": {
+      "source": "303754800",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ScheduleModule",
+        "targetModuleName": "Brand"
+      },
+      "id": "-1661829930"
+    },
+    "-1107570771": {
+      "source": "-643397745",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1107570771"
+    },
+    "-659194496": {
+      "source": "-643397745",
+      "target": "303754800",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "ScheduleModule"
+      },
+      "id": "-659194496"
+    },
+    "-1813522227": {
+      "source": "-643397745",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "Domain"
+      },
+      "id": "-1813522227"
+    },
+    "-782501712": {
+      "source": "-643397745",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "Application"
+      },
+      "id": "-782501712"
+    },
+    "-593556421": {
+      "source": "-643397745",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-593556421"
+    },
+    "-86067579": {
+      "source": "-643397745",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "Color"
+      },
+      "id": "-86067579"
+    },
+    "-92311600": {
+      "source": "-643397745",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "DiscoveryModule",
+        "targetModuleName": "Presentation"
+      },
+      "id": "-92311600"
+    },
+    "-1486355567": {
+      "source": "-1166512175",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1486355567"
+    },
+    "-802190771": {
+      "source": "-1166512175",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-802190771"
+    },
+    "-1882492476": {
+      "source": "-1166512175",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-1882492476"
+    },
+    "-1625202670": {
+      "source": "-1166512175",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "Domain"
+      },
+      "id": "-1625202670"
+    },
+    "-2027385212": {
+      "source": "-1166512175",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-2027385212"
+    },
+    "-1589233906": {
+      "source": "-1166512175",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "Color"
+      },
+      "id": "-1589233906"
+    },
+    "-943246525": {
+      "source": "-1166512175",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "Brand"
+      },
+      "id": "-943246525"
+    },
+    "-802622681": {
+      "source": "-1166512175",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Infraestructure",
+        "targetModuleName": "Presentation"
+      },
+      "id": "-802622681"
+    },
+    "-1340939539": {
+      "source": "1089325073",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1340939539"
+    },
+    "-898992928": {
+      "source": "1089325073",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "-898992928"
+    },
+    "-797578690": {
+      "source": "1089325073",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Domain",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-797578690"
+    },
+    "-2123365783": {
+      "source": "223287843",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-2123365783"
+    },
+    "-1992763213": {
+      "source": "223287843",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "Color"
+      },
+      "id": "-1992763213"
+    },
+    "-605495261": {
+      "source": "223287843",
+      "target": "-1166512175",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "Infraestructure"
+      },
+      "id": "-605495261"
+    },
+    "-1892867117": {
+      "source": "223287843",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Application",
+        "targetModuleName": "Domain"
+      },
+      "id": "-1892867117"
+    },
+    "-1470411256": {
+      "source": "-2086140545",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "Color"
+      },
+      "id": "-1470411256"
+    },
+    "-1079168195": {
+      "source": "-2086140545",
+      "target": "-2044839270",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Vehicle",
+        "targetModuleName": "Brand"
+      },
+      "id": "-1079168195"
+    },
+    "-476167263": {
+      "source": "-2043994506",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-476167263"
+    },
+    "-2055577261": {
+      "source": "-2043994506",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-2055577261"
+    },
+    "-748670632": {
+      "source": "-2043994506",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "Domain"
+      },
+      "id": "-748670632"
+    },
+    "-1249068044": {
+      "source": "-2043994506",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-1249068044"
+    },
+    "-2107351049": {
+      "source": "-2043994506",
+      "target": "-1908243289",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Color",
+        "targetModuleName": "Presentation"
+      },
+      "id": "-2107351049"
+    },
+    "-1010956234": {
+      "source": "-2044839270",
+      "target": "1712628187",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "ConfigModule"
+      },
+      "id": "-1010956234"
+    },
+    "-2141011575": {
+      "source": "-2044839270",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-2141011575"
+    },
+    "-610828677": {
+      "source": "-2044839270",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "Domain"
+      },
+      "id": "-610828677"
+    },
+    "-482846551": {
+      "source": "-2044839270",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Brand",
+        "targetModuleName": "Color"
+      },
+      "id": "-482846551"
+    },
+    "-1396669232": {
+      "source": "-1908243289",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1396669232"
+    },
+    "-417202975": {
+      "source": "-1908243289",
+      "target": "211572259",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "ConfigHostModule"
+      },
+      "id": "-417202975"
+    },
+    "-1855300315": {
+      "source": "-1908243289",
+      "target": "1089325073",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "Domain"
+      },
+      "id": "-1855300315"
+    },
+    "-67187170": {
+      "source": "-1908243289",
+      "target": "223287843",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "Application"
+      },
+      "id": "-67187170"
+    },
+    "-52571589": {
+      "source": "-1908243289",
+      "target": "-2086140545",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "Vehicle"
+      },
+      "id": "-52571589"
+    },
+    "-296100125": {
+      "source": "-1908243289",
+      "target": "-2043994506",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "Presentation",
+        "targetModuleName": "Color"
+      },
+      "id": "-296100125"
+    },
+    "-221187751": {
+      "source": "400681591",
+      "target": "-26938366",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "DiscoveryModule",
+        "sourceClassName": "DiscoveryService",
+        "targetClassName": "ModulesContainer",
+        "sourceClassToken": "DiscoveryService",
+        "targetClassToken": "ModulesContainer",
+        "targetModuleName": "InternalCoreModule",
+        "keyOrIndex": 0,
+        "injectionType": "constructor",
+        "internal": true
+      },
+      "id": "-221187751"
+    }
+  },
+  "entrypoints": {},
+  "extras": {
+    "orphanedEnhancers": [],
+    "attachedEnhancers": []
+  },
+  "status": "partial",
+  "metadata": {
+    "cause": {
+      "type": "unknown-dependencies",
+      "context": {
+        "index": 0,
+        "dependencies": [
+          "Object"
+        ],
+        "name": "Object"
+      },
+      "moduleId": "223287843",
+      "nodeId": "-551311321"
+    }
+  }
+}

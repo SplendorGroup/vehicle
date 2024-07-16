@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { VehicleService } from '@/infraestructure/services/vehicle';
+import { VehicleService } from '@/application/services/vehicle';
 import { Vehicle } from '@/domain/entities/vehicle';
-import { DataMount } from '@/infraestructure/types/data';
-import { RequestUser } from '@/infraestructure/types/user';
+import { DataMount } from '@/domain/types/data';
+import { RequestUser } from '@/domain/types/user';
 import { RpcException } from '@nestjs/microservices';
 import { CreateVehicleDTO } from '@/application/dtos/vehicle/create-vehicle';
 import { VehicleColor } from '@/domain/entities/vehicle-color';
-import { ColorService } from '@/infraestructure/services/color';
+import { ColorService } from '@/application/services/color';
 import { Color } from '@/domain/entities/color';
-import { VehicleColorService } from '@/infraestructure/services/vehicle-color';
-import { BrandService } from '@/infraestructure/services/brand';
+import { VehicleColorService } from '@/application/services/vehicle-color';
+import { BrandService } from '@/application/services/brand';
 import { Brand } from '@/domain/entities/brand';
 
 type VehicleCompleted = {
@@ -32,12 +32,6 @@ export class CreateVehicleUseCase {
     const brand = await this.getBrandById(data.brand_id);
     this.checkIfTheBrandIsFound(brand);
 
-    const vehicle = await this.getVehicleEqual({
-      brand_id: data.brand_id,
-      model: data.model,
-    });
-
-    this.checkIfTheVehicleExists(vehicle);
     const color_ids = this.getColorIds(data.colors);
 
     const colors_checked_results = await this.checkColorIds(color_ids);
@@ -69,12 +63,11 @@ export class CreateVehicleUseCase {
         year: data.year,
         price: data.price,
         available: data.available,
-        created_by: user?.id ?? 'admin',
       });
       return await this.vehicleService.create(vehicle);
     } catch {
       throw new RpcException({
-        code: 1302,
+        code: 1502,
         details: JSON.stringify({
           name: 'Vehicle Creation Failed',
           identify: 'Vehicle_CREATION_FAILED',
@@ -92,7 +85,7 @@ export class CreateVehicleUseCase {
   checkIfTheBrandIsFound(brand: Brand) {
     if (!brand) {
       throw new RpcException({
-        code: 1400,
+        code: 1600,
         details: JSON.stringify({
           name: 'Brand Not Found',
           identify: 'BRAND_NOT_FOUND',
@@ -126,7 +119,7 @@ export class CreateVehicleUseCase {
 
     if (count_true > 1) {
       throw new RpcException({
-        code: 1501,
+        code: 1701,
         details: JSON.stringify({
           name: 'Colour Already Defined as Default',
           identify: 'COLOR_ALREADY_DEFINED_DEFAULT',
@@ -150,7 +143,7 @@ export class CreateVehicleUseCase {
 
     if (car_colors) {
       throw new RpcException({
-        code: 1500,
+        code: 1700,
         details: JSON.stringify({
           name: 'Color Not Found',
           identify: 'COLOR_NOT_FOUND',
@@ -170,7 +163,6 @@ export class CreateVehicleUseCase {
       return new VehicleColor({
         vehicle_id,
         ...vehicle_color,
-        created_by: user_id ?? "admin",
       });
     });
   }
@@ -182,7 +174,7 @@ export class CreateVehicleUseCase {
   checkIfTheVehicleExists(vehicle: Vehicle) {
     if (vehicle) {
       throw new RpcException({
-        code: 1301,
+        code: 1501,
         details: JSON.stringify({
           name: 'Vehicle Already Exists',
           identify: 'VEHICLE_ALREADY_EXISTS',
